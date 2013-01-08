@@ -5,3 +5,8 @@
 
 检查某个模块是否安装
 perl -MPerl6::Slurp -e "print\"module installed\""
+
+数据库安装模块
+DBI
+DBD::Oracle
+Data::ShowTable
