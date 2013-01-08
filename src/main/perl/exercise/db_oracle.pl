@@ -17,7 +17,13 @@ my $sth=$dbh->prepare(" select * from infos" );
 $sth->execute();
 my @recs;
 while (@recs = $sth->fetchrow_array()) {
-     # print $recs[0].":".$recs[1].":".$recs[2]."\n";
-	 print $recs[10];
+    # print $recs[0].":".$recs[1].":".$recs[2]."\n";
+	#print $recs[10];
+	$dbh->do("insert into testf (id,content) values ($recs[0],EMPTY_CLOB())");  
+    my $sth2=$dbh->prepare("select content from testf where id = ? for update",{ ora_auto_lob => 0 }); 
+    $sth2->execute($recs[0]); 
+    my $char_locator=$sth2->fetchrow_array(); 
+    #通过主键定位要插入CLOB数据的记录，并获取指针 
+    $dbh->ora_lob_write($char_locator,1,$recs[10]);
 }
 $dbh->disconnect;
