@@ -1,0 +1,7 @@
+可能会和安装的oracle perl 冲突
+解决办法：
+把环境变量中的PERL5LIB 去掉
+在线安装会出现问题，改为手动下载编译安装
+
+检查某个模块是否安装
+perl -MPerl6::Slurp -e "print\"module installed\""

@@ -1,0 +1,210 @@
+﻿perl 语言是一种非常强大的脚本语言，其应用遍及系统维护，CGI，数据库编程。 
+
+　　以下是我遇到的一个具体问题，应用perl获得圆满解决。 
+　　 
+
+　　问题提出： 
+
+　　 某数据库应用。需要检索一批数据（A表，数据量12万左右）。对该批数据将进行逐一核对，期间将关联三个千万级的表（C,D,E表，分别有近亿条数据），并将检索状态插入一张新表(F)。 
+
+　　 
+
+　　传统解决方案： 
+
+　　 编写存储过程。打开一个cursor，对A表遍历，逐一检索C,D,E表。判断状态写入新表。编程过程十分简单，顺利完成。但执行时效率低下，耗时在8小时左右，不能满足要求。　　 
+
+　　分析： 
+　　 C,D,E表建有极其完备的索引。对单条数据检索极其快速。同时执行时主机CPU，内存等资源十分空闲。查询单条记录耗时：8×3600/12万＝0.24秒，也是在合理的范围。同时主机数据库在业务高峰期时可以支持500－600用户同时登陆（telnet方式）。以上说明性能瓶颈不在主机，数据库上。　　 
+
+　　结论：以上所有都合情合理，采用单进程方式无法进一步提高性能。为提高速度，只能采用多进程。　　 
+
+　　快速构造原型:　　 
+
+　　原型一： 
+
+　　#!/usr/bin/perl 
+　　 
+
+　　my $maxchild=20; 
+
+　　foreach $item (1..500) { 
+
+　　while ( `ps -ef　grep $0　wc -l` > $maxchild) { select undef,undef,undef,0.1; }; 
+
+　　if ($PID=fork()){ 
+
+　　 print "Starting Sub_Process:$PID\n"; 
+
+　　} else { 
+
+　　 print "I will handle data:$item\n"; 
+
+　　 sleep 1; 
+
+　　 exit 1; 
+
+　　}; 
+
+　　} 
+
+　　 
+
+　　执行以上，正常，子进程控制在20。以上述脚本为基础，添加数据库部分： 
+
+　　 
+
+　　#!/usr/bin/perl 
+
+　　 
+
+　　use DBI;　　 
+
+　　my $dbh=DBI->connect(...); 
+
+　　my $sth=$dbh->prepare(qq/select * from A/); 
+
+　　$sth->execute(); 
+
+　　$sth->bind_column(undef,.....);　　 
+
+　　while ($sth->fetch()) { 
+
+　　while ( `ps -ef　grep $0　wc -l` > $maxchild) { select undef,undef,undef,0.1; }; 
+
+　　if ($PID=fork()) { 
+
+　　 print "Starting Sub_Process:$PID\n"; 
+
+　　} else { 
+
+　　 query(B,C,D); #执行数据库操作 
+
+　　 insert(E); 
+
+　　 exit 1; 
+
+　　} 
+
+　　} 
+
+　　$sth->finish(); 
+
+　　$dbh->disconnect(); 
+
+　　 
+
+　　确保无语法错误，执行。处理一两条数据后脚本报错，中断。具体错误略。 
+　　 
+
+　　分析：程序框架没错，但是在fork子进程时，$dbh同时被子进程继承，导致该数据库连接反复使用。由于数据库底层的某种原因，对该种操作是不允许的。结论：以上简单的多进程方式不可行。数据库 
+　　连接部分必须同 fork 分离。 
+
+　　 
+
+　　########################### 
+
+　　 
+
+　　考虑很久，设计如下原型：将打开A表的cursor单独提出，结果传给另外一个进程。12万数据较大，作为参数传递似乎不妥，考虑利用管道通信。 
+
+
+
+原型二： 
+
+　　###########################　　 
+
+　　分成 getdata，setdata两个程序。首先建立管道 : mknod data.pipe pcat getdata:　　 
+
+　　#!/usr/bin/perl　 
+
+　　use DBI; 
+
+　　open(DATAPIPE,">./data.pipe") or die "$!\n";　　 
+
+　　my $dbh=DBI->connect(...); 
+
+　　my $sth=$dbh->prepare(qq/select * from A/); 
+
+　　$sth->execute(); 
+
+　　$sth->bind_column(undef,.....);　　 
+
+　　while ($sth->fetch()) { 
+
+　　print DATAPIPE data.....; 
+
+　　} 
+
+　　close(DATAPIPE);　 
+
+　　######################　　 
+
+　　cat setdata: 
+
+　　#!/usr/bin/perl 
+
+　　use DBI; 
+
+　　open(DATAPIPE,"<./data.pipe") or die "$!\n";　　 
+
+　　my $pipecount=0; 
+
+　　my $maxlines=2000; 
+
+　　my @lines=();　　 
+
+　　while($record=) { 
+
+　　$pipecount++; 
+
+　　push @lines,$record;　　 
+
+　　unless ($pipecount % $maxlines) { 
+
+　　 if ($PID=fork()){ 
+
+　　 print "Starting Sub_Process:$PID\n"; 
+
+　　 @lines=(); 
+
+　　 }else{ 
+
+　　 my $dbh=DBI->connect(...); 
+
+　　 foreach (@lines) { 
+
+　　 handle_data($_); 
+
+　　 } 
+
+　　 $dbh->disconnect(); 
+
+　　 exit 1; 
+
+　　 } 
+
+　　} 
+
+　　} 
+
+　　 
+
+　　my $dbh=DBI->connect(...); 
+
+　　foreach (@lines) { 
+
+　　handle_data($_); 
+
+　　} 
+
+　　 
+
+　　$dbh->disconnect(); 
+　　 
+
+　　以上脚本运行正常，执行时启动：12万/$maxlines= 60个子进程。 
+
+　　处理完所有数据耗时在 10分钟左右，效率提高几十倍。　　 
+
+　　脚本执行方式：./getdata&./setdata　
+
