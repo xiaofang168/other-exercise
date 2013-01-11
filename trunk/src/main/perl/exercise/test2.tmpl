@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<title><TMPL_VAR NAME="title"></title>
+</head>
+<body>
+测试TMPL_UNLESS<br>
+<h2><TMPL_UNLESS NAME="is_english"><TMPL_VAR NAME="chinese_text"><TMPL_ELSE><TMPL_VAR NAME="english_text"></TMPL_UNLESS></h2>
+--------------------------------------------------------------------------------<br>
+测试TMPL_IF<br>
+<h2><TMPL_IF NAME="is_chinese"><TMPL_VAR NAME="chinese_text"><TMPL_ELSE><TMPL_VAR NAME="english_text"></TMPL_IF></h2>
+--------------------------------------------------------------------------------<br>
+测试嵌套TMPL_LOOP<br>
+<TMPL_LOOP NAME="loop">
+    <TMPL_LOOP NAME="title">
+            <TMPL_IF NAME="is_english">English text : <TMPL_VAR NAME="english_text"><br></TMPL_IF>
+            <TMPL_IF NAME="is_chinese">Chinese text : <TMPL_VAR NAME="chinese_text"><br></TMPL_IF>
+    </TMPL_LOOP>
+</TMPL_LOOP>
+--------------------------------------------------------------------------------<br>
+<br>
+测试TMPL_INCLUDE<br>
+<p align=center><TMPL_INCLUDE NAME="test.html"><br></p>
+--------------------------------------------------------------------------------<br>
+</body>
+</html>
