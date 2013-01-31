@@ -4,7 +4,13 @@
 在线安装会出现问题，改为手动下载编译安装
 
 检查某个模块是否安装
-perl -MPerl6::Slurp -e "print\"module installed\""
+方法一：perl -MPerl6::Slurp -e "print\"module installed\""
+方法二：perldoc module_name 例：perldoc IO::ALL
+
+在线安装模块
+cpan module_name 例：cpan IO::ALL
+
+
 
 数据库安装模块
 DBI
