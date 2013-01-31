@@ -16,3 +16,21 @@ cpan module_name 例：cpan IO::ALL
 DBI
 DBD::Oracle
 Data::ShowTable
+
+用sublime 开发
+Decode error - output not utf-8
+解决办法，打开 
+C:\Users\用户名\AppData\Roaming\Sublime Text 2\Packages\User\您的编译配置文件 
+增加"encoding":"cp936" 
+
+2、当前代码文件在中文目录时候，编译出错时 
+打开： C:\Users\liqun\AppData\Roaming\Sublime Text 2\Packages\Default\exce.py 
+修改 proc_env[k] = os.path.expandvars(v).encode(sys.getfilesystemencoding()) 
+为  proc_env[k] = os.path.expandvars(v.decode(sys.getfilesystemencoding())).encode(sys.getfilesystemencoding()) 
+在 self.proc = subprocess.Popen(arg_list, stdout=subprocess.PIPE, 
+前增加 
+for index in range(len(arg_list)):  
+	arg_list[index]=arg_list[index].encode(sys.getfilesystemencoding()) 
+
+
+
