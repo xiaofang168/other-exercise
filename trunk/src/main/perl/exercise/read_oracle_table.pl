@@ -42,6 +42,8 @@ my $matrix_ref = $sth->fetchall_arrayref();
 my $rows= (!defined($matrix_ref)?0:scalar(@{$matrix_ref}));
 my $cols= ($rows == 0 ? 0:scalar(@{$matrix_ref->[0]}));
 
+#printf("this row length is: %s\n",$rows);
+
 #define array
 our $array=[];
 #print each row
