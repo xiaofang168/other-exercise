@@ -1,0 +1,48 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="/WEB-INF/dateTag.tld" prefix="date" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>${TITLE}</title>
+<link href="${Context}/common/css/std_jx.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="${Context}/common/js/Calendar.js"></script>
+<script type="text/javascript" src="${Context}/common/js/common.js"></script>
+
+<form action="" namespace="/background">
+<div style="display: none">
+	<input name="Entity.forward" type="hidden" value="list" />
+	<input type="hidden" name="Entity.class" value="<TMPL_VAR NAME='entityClass'>" />
+	<input name="Entity.alias" type="hidden" value="o" />
+	<jsp:include page="/common/jsp/pages.jsp" />
+</div>
+<table width="100%" border="1" align="center" cellpadding="2" cellspacing="1"    class="mps_ft" style="BORDER-COLLAPSE: collapse">
+<tr>
+  	<td height="30" colspan="4" class="office_topic_black">
+		<strong><TMPL_VAR NAME="title"></strong>
+	</td>
+</tr>
+<TMPL_LOOP NAME="items">
+   <tr>
+		<TD class="left_td"><TMPL_VAR NAME="td1">£º</TD>
+		<TD class="left_td_v" >
+			<input type="text" name="<TMPL_VAR NAME='td2'>" id="<TMPL_VAR NAME='td2id'>" class="inputbox" />
+		</TD>
+		<TD class="left_td" ><TMPL_VAR NAME="td3">£º</TD>
+		<TD class="left_td_v">
+			<input type="text" name="<TMPL_VAR NAME='td4'>" id="<TMPL_VAR NAME='td4id'>" class="inputbox" />
+		</TD>
+	</tr>
+</TMPL_LOOP>
+<TR>
+	<TD align=center colspan="4">
+		<input type="button" class="button" style="cursor: pointer" value="È·  ¶¨" />
+		&nbsp;&nbsp;
+		<input type="button" class="button" style="cursor: pointer" value="¹Ø  ±Õ" onclick="window.close();" />
+	</TD>
+</TR>
+</Table
+</form>
