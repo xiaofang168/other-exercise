@@ -1,0 +1,7 @@
+{
+"cmd": ["C:\\Documents and Settings\\cognos\\Application Data\\npm\\coffee.cmd","-c","-o","../lib/","$file"],
+"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+"selector": "source.coffee",
+"variants":[{"name": "Run","cmd": ["C:\\Documents and Settings\\cognos\\Application Data\\npm\\coffee.cmd","$file"]}]
+}
+
