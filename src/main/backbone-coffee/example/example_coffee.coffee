@@ -38,7 +38,7 @@ class TodoView  extends Backbone.View
 			@collection.add item
 	appendItem:(item) ->
 	 		item_view=new ItemView model:item
-      		#$('ul').append item_view.render().el
+	 		$('ul').append item_view.el
       		#$('ul').append "<li>#{item.get 'title'} #{item.get 'completed'}!</li>"
 	events: 'click button': 'addItem'
 todoView = new TodoView model : todo,el : $("#todo")
