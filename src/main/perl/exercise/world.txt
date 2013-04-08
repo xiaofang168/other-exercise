@@ -1,0 +1,6 @@
+[列管时间(LGSJ),入库时间(RKSJ),籍贯国家（地区）(JGGJ),身份证件号码
+(SFZJHM),发证日期(FZRQ),性别(XB),出生日期(CSRQ),出生地(CSD),承运航空公司(HKGS),航班号
+(HBH),旅客中文姓名(LKZWXM),到达航站(DDHZ),航班日期(HBRQ),起飞航站(QFHZ),旅客座位信息
+(LKZWXX),进港时间(JGSJ),离港国家(LGGJ),旅客国家(LKGJ),过期日期(GQRQ),旅客出入境标识
+(LKCRJBZ),身份证件类型(SFZJLX),航班号后缀(HBHHZ),旅客姓(LKX),旅客中间名(LKZJM),旅客名
+(LKM),发证国家或地区(FZGJHDQ),执行执机时间(ZXZJSJ)]
