@@ -1,4 +1,4 @@
-﻿perl 语言是一种非常强大的脚本语言，其应用遍及系统维护，CGI，数据库编程。 
+perl 语言是一种非常强大的脚本语言，其应用遍及系统维护，CGI，数据库编程。 
 
 　　以下是我遇到的一个具体问题，应用perl获得圆满解决。 
 　　 
@@ -207,4 +207,9 @@
 　　处理完所有数据耗时在 10分钟左右，效率提高几十倍。　　 
 
 　　脚本执行方式：./getdata&./setdata　
+
+#perl 执行 linux 查找文件命令
+my @pathlist='find /home/a/ -name "*.sp"';#这是执行linux命令行中的命令，把/home/a/ 路径下所有的.sp文件都检索出来，放到@pathlist数组里。
+foreach my $fsp (@pathlist) {#想要的文件出理。
+open(OUT,“〈",$fsp);}
 
