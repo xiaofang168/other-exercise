@@ -1,0 +1,8 @@
+1、普通文本文件读取(整个文件读取，行读取)
+2、excel文件读取
+3、数据库大字段导入
+4、文件递归读取(find_text.pl)
+5、文件中的内容查找(find_text.pl)
+6、文件中的内容替换(world_handle.pl)
+7、文件处理(handle_file.pl)
+8、模板生成(read_oracle_table.pl,perl-form_add.pl)一个文件调用另一个文件
