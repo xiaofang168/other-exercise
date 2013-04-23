@@ -1,5 +1,5 @@
 #引入类文件
-require_relative "Test"
+require "Test"
 
 puts "hello world"
 x=10
@@ -32,4 +32,4 @@ end
 sys_hello "hello world"
 
 test=Test.new
-puts (test.test "test")
+puts (test.test "test11")
