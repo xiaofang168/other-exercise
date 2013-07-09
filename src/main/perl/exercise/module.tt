@@ -1,0 +1,6 @@
+class [% table_name %]
+  include DataMapper::Resource
+  [% FOREACH team = teams -%]
+   property :[% team.col_name %],	[% team.col_type %],	[% IF  team.col_default %]:default  => [% team.col_default %],[% END %]    [% IF  team.col_nullable=='NO' %]:required => true,[% END %]  
+  [% END %] 
+end
