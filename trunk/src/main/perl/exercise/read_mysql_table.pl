@@ -47,6 +47,7 @@ my $text_file = 'Menu.rb';
 open my $text, '<', $text_file or die $!;   
 my $content = slurp $text;  
 #replace last , 
+#[^,]匹配除了,以外的任意字符
 $content=~s/,([^,]*)$/$1/;
 
 open(HANDLE, ">",$text_file) or die "Can't open $text_file $!";
