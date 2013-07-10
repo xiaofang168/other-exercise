@@ -7,6 +7,7 @@ use DBI;
 use Perl6::Slurp;
 use autodie; 
 
+
 #defin typeMap
 my %filed_type = (
 "int" => "Serial",
@@ -16,7 +17,7 @@ my %filed_type = (
 );
 
 
-our @array=();
+our $array=[];
 # connect
 my $dbh = DBI->connect("DBI:mysql:test:localhost:", "", "");
 
@@ -25,18 +26,19 @@ $sth->execute();
 # iterate through resultset
 # print values
 while(my @data = $sth->fetchrow_array()) {
-   push @array, {col_name=>$data[0],col_type=>$filed_type{$data[1]},col_default=>$data[2],col_nullable=>$data[3]};
+   push $array, {col_name=>$data[0],col_type=>$filed_type{$data[1]},col_default=>$data[2],col_nullable=>$data[3]};
 }
-
+=pod
 for my $element (@array) {  
   		#print $element->{col_name}."\n";
 }
-
+=cut
 # 建一个 TT 的对象
 my $tt = Template->new({ INCLUDE_PATH => '.',  INTERPOLATE  => 1, }) || die "$Template::ERROR\n";       
 my $vars = {       
 	table_name => "Menu", 
-	teams=>\@array
+	teams=>$array
+	#teams=>\@array
 };   
 # 使用 
 my $templateFile = 'module.tt'; 
