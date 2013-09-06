@@ -1,0 +1,5 @@
+1、安装nodejs
+2、安装coffeescript
+3、新建js项目
+4、新建package.json && Gruntfile.js or Gruntfile.coffee
+5、运行命令npm install <module> --save-dev安装插件
