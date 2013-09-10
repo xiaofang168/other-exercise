@@ -24,12 +24,16 @@ module.exports = (grunt) ->
         app: 
             expand: true
             flatten: true
+            options:
+              bare: true
             src: 'src/*.coffee'
             dest: 'src/'
             ext: '.js'
         user:
             expand: true
             flatten: true
+            options:
+              bare: true
             src: 'src/user/*.coffee'
             dest: 'src/user/'
             ext: '.js'
