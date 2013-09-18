@@ -39,7 +39,13 @@ module.exports = (grunt) ->
             ext: '.js'
             
     clean: ["src/*.js", "src/user/*.js"]
+    ###
+            删除文件但不包含
+    clean:
+			app:
+				src: ['build/*.js','!build/*.min.js']
     
+    ###
     watch: 
         js:  
           files: ['src/*.coffee','src/user/*.coffee']
