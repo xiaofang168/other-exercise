@@ -1,0 +1,6 @@
+{
+    "cmd": ["C:\\Users\\fangj\\AppData\\Roaming\\npm\\coffee.cmd", "-c", "-p", "-b", "$file"],
+    "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+    "selector": "source.coffee",
+    "variants":[{"name": "Run","cmd": ["C:\\Users\\fangj\\AppData\\Roaming\\npm\\coffee.cmd","$file"]}]
+}
