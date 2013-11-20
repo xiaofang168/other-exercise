@@ -31,16 +31,9 @@ my $format = $wb->add_format();
 $format->set_align('center');
  # Add a worksheet
 my $ws = $wb->add_worksheet();
-$ws->set_column('A:A', 20);
-$ws->set_column('B:B', 20);
+$ws->set_column('A:B', 20);
 $ws->set_column('C:C', 50);
-$ws->set_column('D:D', 20);
-$ws->set_column('E:E', 20);
-$ws->set_column('F:F', 20);
-$ws->set_column('G:G', 20);
-$ws->set_column('H:H', 20);
-$ws->set_column('I:I', 20);
-$ws->set_column('J:J', 20);
+$ws->set_column('D:J', 20);
 $ws->set_column('K:K', 100);
 
 my $key;
@@ -87,6 +80,4 @@ for my $sheet_index (1 .. $sheet_count){
 				        print "\n\n";
               };
    }
-  $workbook->close();
   $wb->close() or die "Error closing file: $!";
-   
