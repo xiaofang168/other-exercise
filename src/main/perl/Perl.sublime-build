@@ -1,0 +1,6 @@
+{	
+	"env": {"PERL5LIB":"/home/fangjie/perl5/lib/perl5"},
+	"cmd": ["perl","$file"],
+	"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+	"selector": "source.pl"
+}
