@@ -1,0 +1,12 @@
+{
+	"draw_white_space": "all",
+	"font_size": 20.0,
+	"ignored_packages":
+	[
+		"sublime-git"
+	],
+	"scroll_past_end": true,
+	"translate_tabs_to_spaces": false,
+	"trim_automatic_white_space": false,
+	"word_wrap": false
+}
