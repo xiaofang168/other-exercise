@@ -16,6 +16,18 @@ cpan module_name 例：cpan IO::ALL
 3、o conf http_proxy http://127.0.0.1:8087
 4、o conf commit
 
+cpan> o conf use_sqlite 0
+cpan> o conf commit
+cpan> reload index
+cpan> install CPAN::SQLite
+cpan> o conf use_sqlite 1
+cpan> o conf commit
+
+install Bundle::CPAN
+reload CPAN即可正常通过命令行install MODULES
+
+
+
 数据库安装模块
 DBI
 DBD::Oracle
