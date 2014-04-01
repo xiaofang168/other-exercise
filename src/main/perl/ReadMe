@@ -10,7 +10,11 @@
 在线安装模块
 cpan module_name 例：cpan IO::ALL
 
-
+使用代理在线安装模块
+1、cpan
+2、o conf (查看设置提示)
+3、o conf http_proxy http://127.0.0.1:8087
+4、o conf commit
 
 数据库安装模块
 DBI
