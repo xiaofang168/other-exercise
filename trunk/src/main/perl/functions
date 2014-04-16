@@ -11,3 +11,4 @@
 11、下划线去掉首字母大写 create_scala_entity.pl
 12、查找匹配最后一个符合的字符串findWordEnd.pl
 13、重命名文件夹，替换import package错误包replace_folder.pl
+14、目录下查找指定文件格式中出现的字符 find_text.pl
