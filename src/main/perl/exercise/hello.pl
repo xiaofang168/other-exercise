@@ -34,3 +34,4 @@ for(my $i = 0; $i < scalar @array; $i++) {
 }
 #使用负数索引来检索从后往前的元素：
 print	($array[-1]);
+print "hello word" x 2; 
