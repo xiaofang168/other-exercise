@@ -23,14 +23,14 @@ print "The last populated index is ".$#array,"\n";
 print "@array";
 
 #
-print "Hello \$string"; # "Hello $string"
-print 'Hello $string';  # "Hello $string"
-print "\@array";        # "@array"
-print '@array';         # "@array"
+print "Hello \$string","\n"; # "Hello $string"
+print 'Hello $string',"\n";  # "Hello $string"
+print "\@array","\n";        # "@array"
+print '@array',"\n";         # "@array"
 
 #for
 for(my $i = 0; $i < scalar @array; $i++) {
-	print $i, ": ", $array[$i];
+	print $i, ": ", $array[$i], "\n";
 }
 #使用负数索引来检索从后往前的元素：
 print	($array[-1]);
