@@ -30,5 +30,39 @@ sub which_element_is{
 	-1;
 }
 
+my @w=(1,2,3,4);
+my @k=(6,7,8,9);
+# 如果你不想用全局变量的话，也可以传引用。
+#&da(\@w,\@k);
+my @f = &shift(\@w,\@k);
+#print(@f.">>");
+#如果你的sub 跟系统内置的同名了, 就加& 否则可不加.
+#print "#$_" for (my @f = &da(\@w,\@k));
+sub shift
+{
+	#my $m = shift @_;
+	#my $n = shift @_;
+
+	my ($m,$n) = @_;
+	print("\n\n\n");
+	my $x = @$m;
+	my $y = @$n;
+	print($x);
+	print($y);
+	print("\n\n\n");
+	my $z = ($x < $y) ? $y : $x;    
+	my @e = map {@$m[$_] + @$n[$_]} 0 .. $z-1;
+	return @e;
+}
+=cut
+for my $i (0..$#a) {
+  $c[$i] = $a[$i] + $b[$i];
+}
+=cut
+my @a = (1, 2, 3);
+my @b = (1, 2, 3);
+
+my @c = map { $a[$_] + $b[$_] } 0..$#a;
+print @c;
 
 
