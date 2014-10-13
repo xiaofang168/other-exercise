@@ -63,6 +63,13 @@ my @a = (1, 2, 3);
 my @b = (1, 2, 3);
 
 my @c = map { $a[$_] + $b[$_] } 0..$#a;
-print @c;
+print @c."\n";
 
+# \ 是引用
+print \(scalar(@a));
+# 加上之前的@ $ %({}) 是解引用
+print ${\(scalar(@a))};
+print "\n";
+my $t = \@a;
 
+print(@{$t});
