@@ -45,3 +45,19 @@ print scalar(@a)."\n";
 #my @a = split(/(?<!\d)/, "c833");
 #print $_,"\n" for @a;
 
+my $x = 'Oct 11 01:11:58 localhost realtime:ident:';
+#$x =~ /(.*)(?<=\d)\s(.*?)\s(.*?):(\w*)/;
+$x =~ s/(.*)(?<=\d)\s(.*?)\s(.*?):(\w*)/$1;$2;$3;$4/;
+print "$1, $2, $3, $4";
+print "\n";
+my $y = '2000Windows';
+$y =~ /(.*)(?<=\d)Windows/;
+# 正则表达式中零宽断言
+#$y =~ /((?=\d))(.*)Windows/;
+print "$1"."\n";
+
+my $test = "bluemonster is reading a book about monsters";
+
+$test =~ /(.*)\w+(?=monster)/;
+print "$1";
+
