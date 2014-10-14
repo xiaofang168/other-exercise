@@ -12,4 +12,4 @@
 12、查找匹配最后一个符合的字符串findWordEnd.pl
 13、重命名文件夹，替换import package错误包replace_folder.pl
 14、目录下查找指定文件格式中出现的字符 find_text.pl
-15、一连串匹配正则表达式,分割等
+15、一连串匹配正则表达式,分割等(逆向肯定预查、零宽断言)regex_word.pl
