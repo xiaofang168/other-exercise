@@ -13,3 +13,6 @@
 13、重命名文件夹，替换import package错误包replace_folder.pl
 14、目录下查找指定文件格式中出现的字符 find_text.pl
 15、一连串匹配正则表达式,分割等(逆向肯定预查、零宽断言)regex_word.pl
+16、解析文本获取文件路径然后拷贝到指定目录parsefile_copy_file.pl
+17、方法调用及参数传递譬如#my $m = shift @_;#my $n = shift @_;||my ($m,$n) = @_; array_test.pl
+18、正则表达式提取匹配的文本、去掉换行 #print $&."\n"; parsefile_copy_file.pl
