@@ -24,7 +24,7 @@ sub open_display_file
 		#去掉换行符;
 		my $s = chomp($line);
 		# 用正则表达式抓取路径字符串
-		if($line =~ /path=\"(.*)\"/){
+		if($line =~ /path=\"(.*?)\"/){
 			#print $&."\n";
 			# 调用copy 函数
 			copyfile($1,"E:\\workspaces\\dbproxy-new\\dbproxy-services\\target\\scala-2.10\\lib")
