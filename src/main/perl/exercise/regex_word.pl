@@ -59,5 +59,9 @@ print "$1"."\n";
 my $test = "bluemonster is reading a book about monsters";
 
 $test =~ /(.*)\w+(?=monster)/;
-print "$1";
+print "$1"."\n";
+
+my $str5 = "E:\\workspaces\\scala-workspace\\spark-start\\dd";
+$str5 =~ /(.*\/|.*\\)(.*)/;
+print "$2"."<<<";
 
