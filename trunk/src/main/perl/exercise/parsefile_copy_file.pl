@@ -20,14 +20,17 @@ sub open_display_file
 	# read other into array
 	my @all = <FILE>;
 	my $line = "";
+	my $count = 0;
 	foreach $line (@all){
 		#去掉换行符;
 		my $s = chomp($line);
 		# 用正则表达式抓取路径字符串
-		if($line =~ /path=\"(.*?)\"/){
+		if($line =~ /path=\"(.*?jar)\"/){
 			#print $&."\n";
+			#$count = $count + 1;
+			#print $1.">>>".$count."\n"
 			# 调用copy 函数
-			copyfile($1,"E:\\workspaces\\dbproxy-new\\dbproxy-services\\target\\scala-2.10\\lib")
+			copyfile($1,"C:\\Users\\fangjie1.HIK\\Desktop\\spray-extjs\\lib")
 			#print $1."\n";
 		}
 		
