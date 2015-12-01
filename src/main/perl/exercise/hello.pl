@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+# defined
+my ($col,$row) = 0;
 
 print "Hello World\n";
 
