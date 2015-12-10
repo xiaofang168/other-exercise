@@ -20,9 +20,9 @@ $worksheet->write(0, 0, decode("utf8", "用户名"), $format);
 $worksheet->write(0, 1, decode("utf8", "密码"), $format);
 
 my $i = 1;
-foreach(600001 .. 655000){
+foreach(100000 .. 135421){
 	# Add Data
-	$worksheet->write($i, 0, $_);
+	$worksheet->write($i, 0, "pk$_");
 	$worksheet->write($i, 1, $_);
 	$i++;
 }
