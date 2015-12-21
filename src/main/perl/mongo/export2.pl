@@ -24,7 +24,10 @@ my $client = MongoDB->connect('mongodb://localhost:37017');
 my $db = $client->get_database('singpk');
 
 #my @numbers = (100000001 .. 100020000);
-my @numbers = (110000001 .. 110020000);
+#my @numbers = (110000001 .. 110020000);
+#my @numbers = (600001 .. 655000);
+#my @numbers = (500001 .. 550000);
+my @numbers = (700100000 .. 700130000);
 my @ids = map {$_ . ''} @numbers;
 my $users = $db->get_collection('user');
 # \@ids is reference 
