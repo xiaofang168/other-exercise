@@ -26,12 +26,12 @@ $format->set_align('center');
 $worksheet->write(0, 0, "id", $format);
 $worksheet->write(0, 1, "用户名", $format);
 
-my $client = MongoDB->connect('mongodb://localhost:37017');
+my $client = MongoDB->connect('mongodb://localhost:27017');
 my $db = $client->get_database('singpk');
 my $users = $db->get_collection('user');
 
 
-my $file = "D:\\机器人\\35421个用户(100001到135421)末尾随机字母.xls"; #需要处理的文件
+my $file = "D:\\机器人\\5万个用户(2100001-2150000,混入一个随机字母).xls"; #需要处理的文件
 my $path = encode("gbk",$file);
 my $usernames = [];
 my $workbook = ReadData($path); 
@@ -55,8 +55,8 @@ while (my $doc = $all_users->next) {
 	my $id = $doc->{'_id'};
 	my $username = $doc->{'username'};
 	# Add Data
-	$worksheet->write($i, 0, $id);
-	$worksheet->write($i, 1, $username);
+	$worksheet->write_string($i, 0, $id);
+	$worksheet->write_string($i, 1, $username);
 	$i++;
 }
 # Close Workbook

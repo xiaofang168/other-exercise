@@ -9,11 +9,11 @@ use utf8;
 use open ":encoding(gbk)", ":std";
 
 
-my $client = MongoDB->connect('mongodb://localhost:37017');
+my $client = MongoDB->connect('mongodb://localhost:27017');
 my $db = $client->get_database('singpk');
 my $robots = $db->get_collection('robot');
 
-my $file = "D:\\机器人\\包含用户id导出\\100000001-100020000.xls"; #需要处理的文件
+my $file = "D:\\机器人\\包含用户id导出\\5万个用户(2100001-2150000,混入一个随机字母).xls"; #需要处理的文件
 my $path = encode("gbk",$file);
 
 my $workbook = ReadData($path); 

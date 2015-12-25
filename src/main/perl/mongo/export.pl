@@ -20,16 +20,18 @@ $format->set_align('center');
 $worksheet->write(0, 0, decode("utf8", "用户名"), $format);
 $worksheet->write(0, 1, decode("utf8", "密码"), $format);
 
-my $client = MongoDB->connect('mongodb://localhost:37017');
+my $client = MongoDB->connect('mongodb://localhost:27017');
 my $db = $client->get_database('singpk');
 my $users = $db->get_collection('user');
 my $all_users = $users->find;
 my $i = 1;
 while (my $doc = $all_users->next) {
 	my $username = $doc->{'username'};
+	my $pwd = $username;
+	$pwd =~ s/[a-z]//g;
 	# Add Data
-	$worksheet->write($i, 0, $username);
-	$worksheet->write($i, 1, $username);
+	$worksheet->write_string($i, 0, $username);
+	$worksheet->write_string($i, 1, $pwd);
 	$i++;
 }
 # Close Workbook
