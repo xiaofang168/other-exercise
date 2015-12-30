@@ -7,10 +7,16 @@ use Spreadsheet::ParseExcel;
 use Spreadsheet::ParseExcel::FmtUnicode;
 use Encode;
 use MongoDB;
+use Encode qw/encode/;
+use utf8;
 
 my $oExcel = Spreadsheet::ParseExcel->new();
 my $oFmtC = Spreadsheet::ParseExcel::FmtUnicode->new(Unicode_Map=>"CP936");
-my $workbook = $oExcel->Parse('D:\\aa.xls', $oFmtC );
+
+my $file = "D:\\机器人\\aa.xls"; #需要处理的文件
+my $path = encode("gbk",$file);
+print $path . "\n";
+my $workbook = $oExcel->Parse($path, $oFmtC );
 
 my $prefix = [];
 my $suffix =[];
