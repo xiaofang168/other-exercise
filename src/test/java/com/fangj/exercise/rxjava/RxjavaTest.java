@@ -36,7 +36,7 @@ public class RxjavaTest {
                 subscriber.onNext(mockSleep());
                 subscriber.onCompleted();
             }
-        }).subscribeOn(Schedulers.newThread()).observeOn(Schedulers.newThread());
+        }).subscribeOn(Schedulers.newThread());
 
         System.out.println("????");
 
@@ -44,6 +44,7 @@ public class RxjavaTest {
                 new Subscriber() {
                     @Override
                     public void onCompleted() {
+                        mockSleep();
                         System.out.println("completed..");
                     }
 
@@ -104,6 +105,7 @@ public class RxjavaTest {
 
         System.out.println(">>");
         Observable<Integer> evens = Observable.just(get2());
+        System.out.println(">> events");
 
         Observable.merge(odds, evens)
                 .subscribe(new Subscriber<Integer>() {
