@@ -1,4 +1,4 @@
-package com.fangj.exercise.utils;
+package com.fangj.exercise.rxjava;
 
 import rx.Observable;
 import rx.Subscriber;
