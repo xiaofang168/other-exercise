@@ -2,5 +2,7 @@
     "cmd": ["C:\\Users\\fangj\\AppData\\Roaming\\npm\\coffee.cmd", "-c", "-p", "-b", "$file"],
     "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
     "selector": "source.coffee",
-    "variants":[{"name": "Run","cmd": ["C:\\Users\\fangj\\AppData\\Roaming\\npm\\coffee.cmd","$file"]}]
+    "variants":[{"name": "Run","cmd": ["C:\\Users\\fangj\\AppData\\Roaming\\npm\\coffee.cmd","$file"]}],
+    (mac环境变量配置,windows可以忽略)
+    "path": "/usr/local/lib/node_modules/coffee-script/bin/:/usr/local/bin:$PATH"
 }
