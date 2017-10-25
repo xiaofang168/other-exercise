@@ -138,8 +138,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <optimize>true</optimize>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -155,16 +155,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.6.1</version>
-                <configuration>
-                    <bottom>
-                        <![CDATA[<i>Copyright 2010 <a href="http://www.egfit.com">The Eastern Golden Finger Information Co., Ltd.<a></i>]]>
-                    </bottom>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -183,34 +173,5 @@
             </properties>
         </profile>
     </profiles>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>EGF Repository</name>
-            <url>
-                http://egf-dev-server:8081/nexus/content/groups/public
-            </url>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <name>EGF Snapshot Repository</name>
-            <url>
-                http://egf-dev-server:8081/nexus/content/groups/public-snapshots
-            </url>
-        </repository>
-    </repositories>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>egf</id>
-            <url>
-                http://egf-dev-server:8081/nexus/content/repositories/snapshots
-            </url>
-        </snapshotRepository>
-        <repository>
-            <id>egf</id>
-            <url>
-                http://egf-dev-server:8081/nexus/content/repositories/releases
-            </url>
-        </repository>
-    </distributionManagement>
+
 </project>
