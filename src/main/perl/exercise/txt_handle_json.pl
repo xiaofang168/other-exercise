@@ -12,7 +12,8 @@ while (my $row = <$fh>) {
   chomp $row;
   $row =~ m/\((\d+)\)/;
   my $appKey = $1;
-  #my $adxObj = {app => "wltt",  value => $row,  platform => "ios",  key => $appKey};
+  my $adxObj2 = {app => "wltt",  value => $row,  platform => "ios",  key => $appKey};
+  #print $$adxObj2{value}."\n";
   my %adxObj = (
     app   => "wltt",
     value => $row,
@@ -21,6 +22,8 @@ while (my $row = <$fh>) {
 	);
   #push(@adxArray, $adxObj);
   push(@adxArray, \%adxObj);
+  #print %adxObj->{value}."\n";
+  #print $adxObj{value}."\n"
   #print "$row>>>$appKey \n";
 }
 
