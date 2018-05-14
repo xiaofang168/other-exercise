@@ -12,3 +12,4 @@ logs
 .project
 build/*
 .settings
+.vscode
