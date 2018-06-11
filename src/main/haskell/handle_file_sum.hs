@@ -16,6 +16,6 @@ main::IO()
 
 -- main = readFile "p2p.txt" >>= (\inpStr -> putStrLn(((show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr))))
 
-main = readFile "p2p.txt" >>= (\inpStr -> putStrLn(((show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr))))
+main = readFile "p2p.txt" >>= (\inpStr -> putStrLn((show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr)))
     
     
