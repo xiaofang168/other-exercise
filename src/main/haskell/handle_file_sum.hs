@@ -15,7 +15,10 @@ main::IO()
 
 
 -- main = readFile "p2p.txt" >>= (\inpStr -> putStrLn(((show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr))))
-
-main = readFile "p2p.txt" >>= (\inpStr -> (putStrLn . show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr))
+-- main = readFile "p2p.txt" >>= (\inpStr -> (putStrLn . show . sum . map (\x -> read x :: Integer ) . map (\x -> (splitOn " " x)!!1)) (lines inpStr))
+main = readFile "p2p.txt" >>= printLines . lines
+ where covInt s = read s :: Integer
+       getNum x = (splitOn " " x)!!1
+       printLines x = (putStrLn . show . sum . map covInt . map getNum) x
     
     
