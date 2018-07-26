@@ -1,0 +1,18 @@
+<Resource
+            name="mysql_shard_1000_m"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxActive="64"
+            maxIdle="4"
+            maxWait="3000"
+            username="mysqlsiud"
+            password="mysql!@#456"
+            removeAbandoned="true"
+            autoReconnect="true"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://mysql_shard_1000_m:3306/"
+            validationQuery="select 1"
+            testWhileIdle="true"
+            timeBetweenEvictionRunsMillis="300000"
+    >
+</Resource>
