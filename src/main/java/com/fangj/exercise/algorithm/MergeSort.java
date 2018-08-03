@@ -3,6 +3,7 @@ package com.fangj.exercise.algorithm;
 import java.util.Arrays;
 
 /**
+ * 合并排序
  * @author fangjie
  * @date Created in 下午4:43 17/11/29.
  */
