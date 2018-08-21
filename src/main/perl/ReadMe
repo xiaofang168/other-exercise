@@ -5,7 +5,7 @@
 
 检查某个模块是否安装
 方法一：perl -MPerl6::Slurp -e "print\"module installed\""
-方法二：perldoc module_name 例：perldoc IO::ALL
+方法二：perldoc module_name 例：perldoc IO::ALL,perldoc -f open
 
 在线安装模块
 cpan module_name 例：cpan IO::ALL
