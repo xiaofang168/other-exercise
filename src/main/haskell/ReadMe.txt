@@ -19,3 +19,10 @@ ghc-pkg list
 2、:load file
 3、main
 
+# 查看类型
+:t
+
+# 控制台输入
+ :{ // 开始
+ :} // 结束
+
