@@ -33,9 +33,9 @@ public class CollectCollege {
             completableFutureList.add(completableFuture);
         }
         CompletableFuture<List<College>>[] array = completableFutureList.toArray(new CompletableFuture[0]);
-        // 阻塞直到所有线程执行完成
+        // 阻塞直到所有线程执行完成,join不需要捕获异常
         CompletableFuture.allOf(array).join();
-        // 取值
+        // 取值,使用join不需要捕获异常,get需要捕获异常
         List<List<College>> collect = Arrays.stream(array).map(CompletableFuture::join).collect(Collectors.toList());
         List<College> result = collect.stream()
                 .filter(e -> e.size() != 0)
