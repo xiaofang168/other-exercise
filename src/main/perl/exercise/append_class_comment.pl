@@ -9,6 +9,8 @@ use Tie::File;
 
 my @lines;
 
+# how to create multi-line strings in Perl
+
 sub wanted{
 		my $folder=$File::Find::dir;
 		my $file_name=$File::Find::name;
