@@ -10,6 +10,9 @@
 在线安装模块
 cpan module_name 例：cpan IO::ALL
 
+自动安装依赖的命令
+cpanm module_name
+
 使用代理在线安装模块
 1、cpan
 2、o conf (查看设置提示)
