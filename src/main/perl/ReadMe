@@ -13,6 +13,12 @@ cpan module_name 例：cpan IO::ALL
 自动安装依赖的命令
 cpanm module_name
 
+强制安装,解决安装失败问题
+sudo cpanm --force install BSON::Raw
+
+强制安装跳过测试,加速安装过程和避免测试失败导致安装不成功
+sudo cpanm --force install BSON::Raw --notest   
+
 使用代理在线安装模块
 1、cpan
 2、o conf (查看设置提示)
