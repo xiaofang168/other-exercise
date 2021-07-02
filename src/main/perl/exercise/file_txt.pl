@@ -11,7 +11,7 @@ while(<IN>){
 	my @array=($a1,$a2);
 	@array=sort(@array);
 	push $array_new,[@array];
-    print OUT join("\t",sort(@array)),"\n";
+	print OUT join("\t",sort(@array)),"\n";
 }
 close IN;
 close OUT;
