@@ -18,7 +18,7 @@ ghc-pkg list
   
 - \>>= 
 	
-	> 接受一个 monadic value（也就是具有 context 的值，可以用装有普通值的盒子来比喻）并且	把它喂给一个接受普通值的函数，并回传一个 monadic value。
+	> 接受一个 monadic value（也就是具有 context 的值，可以用装有普通值的盒子来比喻）并且把它喂给一个接受普通值的函数，并回传一个 monadic value，也就是拆箱（return装箱）。
 	>
 	> `=<<` 和上面 `>>=` 功能一样，只是结合顺序相反
 
