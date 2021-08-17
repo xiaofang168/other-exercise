@@ -31,7 +31,7 @@ public class CharReplace {
         if (s1.contains(c)) {
             return replace(s1, c);
         }
-        return String.valueOf(originC);
+        return s1;
     }
 
     public static void main(String[] args) {
