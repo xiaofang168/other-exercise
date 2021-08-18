@@ -51,15 +51,7 @@ class Department {
     }
 
     public int getPid() {
-
         return pid;
-
-    }
-
-    public void setPid(int pid) {
-
-        this.pid = pid;
-
     }
 
     public String getName() {
@@ -92,7 +84,11 @@ class Department {
 
 }
 
-public class DepartmentTest {
+/**
+ * @author fangjie
+ * @date Created in 下午10:01 2021/8/18.
+ */
+public class DepartmentLevelFind {
 
     public static void main(String[] args) {
 
@@ -123,13 +119,10 @@ public class DepartmentTest {
 
         allDepartment.add(dep4);
 
-
-        List<Department> subDepartments = DepartmentTest.getSub(1, allDepartment);
+        List<Department> subDepartments = DepartmentLevelFind.getSub(1, allDepartment);
 
         for (Department subDepartment : subDepartments) {
-
             System.out.println(subDepartment);
-
         }
 
     }
@@ -139,10 +132,10 @@ public class DepartmentTest {
      * <p>
      * 要求：不能新增参数，不能增加static变量
      *
-     * @param id
-     * @return
+     * @param id            节点id
+     * @param allDepartment 所有部门
+     * @return 返回子部门
      */
-
     public static List<Department> getSub(int id, List<Department> allDepartment) {
         // 查找第一级的所有孩子
         List<Department> departments = allDepartment.stream().filter(e -> e.getPid() == id).collect(Collectors.toList());
@@ -152,9 +145,7 @@ public class DepartmentTest {
         }
 
         // 定义存储所有孩子的集合
-        List<Department> list = new ArrayList<>();
-        // 添加找到的孩子
-        list.addAll(departments);
+        List<Department> list = new ArrayList<>(departments);
 
         // 移除查找到的孩子,减少遍历的节点
         allDepartment.removeAll(departments);
