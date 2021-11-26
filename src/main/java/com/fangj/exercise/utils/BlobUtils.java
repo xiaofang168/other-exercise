@@ -41,14 +41,14 @@ public class BlobUtils {
                             + "' for update");
             if (rs.next()) {
                 // 使用oracle.sql.BLOB类，没办法了，变成专用的了
-                oracle.sql.BLOB blob = (oracle.sql.BLOB) rs.getBlob("pic");
+                //oracle.sql.BLOB blob = (oracle.sql.BLOB) rs.getBlob("pic");
                 // 到数据库的输出流
-                outStream = blob.getBinaryOutputStream();
+                //outStream = blob.getBinaryOutputStream();
                 // 这里用一个文件模拟输入流
 //				File file = new File("d://proxy.txt");
                 InputStream fin = new FileInputStream(pic);
                 // 将输入流写到输出流
-                byte[] b = new byte[blob.getBufferSize()];
+                byte[] b = new byte[1024];
                 int len = 0;
                 while ((len = fin.read(b)) != -1) {
                     outStream.write(b, 0, len);
