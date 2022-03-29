@@ -14,6 +14,7 @@ https://www.clojure-toolbox.com/
 - http://clojure-doc.org/
 - https://clojure.org/guides/learn/syntax#_symbols_and_idents
 - https://www.tutorialspoint.com/clojure/clojure_basic_syntax.htm
+- https://www.bookstack.cn/read/clojure-learning-notes/README.md
 
 
 
