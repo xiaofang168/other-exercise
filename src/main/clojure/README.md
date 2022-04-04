@@ -19,6 +19,25 @@ brew install leiningen
 - https://www.tutorialspoint.com/clojure/clojure_basic_syntax.htm
 - https://www.bookstack.cn/read/clojure-learning-notes/README.md
 
+# 一些语法
+Anonymous function syntax
+There is a shorter form for the fn anonymous function syntax implemented in the Clojure reader: #(). 
+This syntax omits the parameter list and names parameters based on their position.
+
+- % is used for a single parameter
+- %1, %2, %3, etc are used for multiple parameters
+- %& is used for any remaining (variadic) parameters
+
+```clojure
+;; Equivalent to: (fn [x] (+ 6 x))
+#(+ 6 %)
+
+;; Equivalent to: (fn [x y] (+ x y))
+#(+ %1 %2)
+
+;; Equivalent to: (fn [x y & zs] (println x y zs))
+#(println %1 %2 %&)
+```
 
 
 
