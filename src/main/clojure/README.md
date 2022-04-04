@@ -2,7 +2,9 @@
 brew install leiningen
 
 # clojure终端
-- lein repl
+- 进入交互模式：lein repl
+- 查看函数或宏文档：(doc when) (doc first)
+- 查看类型(class 11)
 
 # 类库
 类似于python的安装
