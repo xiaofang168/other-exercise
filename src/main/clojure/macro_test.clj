@@ -76,11 +76,13 @@
                 (println result#)
                 result#))
 
+;; 推荐使用管道方式更容易理解
 (reduce + (map #(* 2 %) (filter odd? (range 1 20))))
 
 ;; 同上结果一样使用管道方式
 (defn pipeline
-      "docstring"
-      []
-      (->> (range 1 20)
-           (filter odd?) ->> (map #(* 2 %)) ->> (reduce +)))
+      [x]
+      (->> x (range 1)
+           (filter odd?)
+           (map #(* 2 %))
+           (reduce +)))
