@@ -9,7 +9,8 @@ brew install leiningen
 # 类库
 类似于python的安装
 
-https://www.clojure-toolbox.com/
+- https://www.clojure-toolbox.com/
+- https://clojuredocs.org/
 
 # 学习资料
 - https://github.com/linpengcheng/PurefunctionPipelineDataflow/blob/master/Readme_Chinese.md
