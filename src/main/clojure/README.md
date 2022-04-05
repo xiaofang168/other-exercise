@@ -8,7 +8,7 @@ brew install leiningen
 
 # 类库
 类似于python的安装
-
+- Leiningen创建项目：http://wiki.fnil.net/index.php?title=Leiningen教程中文版
 - https://www.clojure-toolbox.com/
 - https://clojuredocs.org/
 
