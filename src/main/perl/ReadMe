@@ -20,6 +20,7 @@ sudo cpanm --force install BSON::Raw
 sudo cpanm --force install BSON::Raw --notest   
 
 使用代理在线安装模块
+https://metacpan.org/
 1、cpan
 2、o conf (查看设置提示)
 3、o conf http_proxy http://127.0.0.1:8087
