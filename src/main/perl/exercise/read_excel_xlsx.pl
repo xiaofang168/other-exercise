@@ -6,6 +6,8 @@ use Spreadsheet::XLSX;
 
 my $excel = Spreadsheet::XLSX->new('test.xlsx');
 =pod
+解引用在遍历的时候用
+
 对@array的解引用：
 $$reference[element];
 $reference->[element];
@@ -25,11 +27,11 @@ $reference->{'key'};
 # 数值（Perl不区分整形和浮点类型）
 # 字符串
 # 其他变量的引用
-foreach my $sheet (@{$excel->{Worksheet}}) {
+foreach my $sheet (@{$excel->{'Worksheet'}}) {
 
     printf("Sheet: %s\n", $sheet->{Name});
 
-    foreach my $row ($sheet->{MinRow} .. $sheet->{MaxRow}) {
+    foreach my $row ($sheet->{'MinRow'} .. $sheet->{'MaxRow'}) {
 
         foreach my $col ($sheet->{MinCol} ..  $sheet->{MaxCol}) {
 
