@@ -61,6 +61,15 @@ foreach $e (@array1){
   print @{$e}[0] . "\n";        #依次打印三个列表元素
 }
 
+ 
+my %data = ('google'=>'google.com', 'runoob'=>'runoob.com', 'taobao'=>'taobao.com');
+my $d = \%data;
+print $data{'google'} . "\n";
+
+# 遍历时候解引用用法
+print $d->{google} . "\n";
+print $d->{'google'} . "\n";
+
 
 
 
