@@ -43,10 +43,9 @@ public class BinarySearchFromSortArrayUseMyLoop {
                     }
                 } else if (dest < middleValue) {
                     // 往左回修正
-                    int flag = c / 2;
                     c = c / 2 == 0 ? 1 : c / 2;
                     cursorIndex = cursorIndex - c;
-                    if (flag == 0 && dest > array[cursorIndex]) {
+                    if (c == 1 && dest > array[cursorIndex]) {
                         return -1;
                     }
                 }
@@ -68,11 +67,10 @@ public class BinarySearchFromSortArrayUseMyLoop {
                         return -1;
                     }
                 } else if (dest > middleValue) {
-                    int flag = c / 2;
                     // 少加一点
                     c = c / 2 == 0 ? 1 : c / 2;
                     cursorIndex = cursorIndex + c;
-                    if (flag == 0 && dest < array[cursorIndex]) {
+                    if (c == 1 && dest < array[cursorIndex]) {
                         return -1;
                     }
                 }
