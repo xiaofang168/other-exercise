@@ -13,6 +13,12 @@ public class BinarySearchFromSortArrayUseMyLoop {
             int indexNum = search(array, array[i]);
             System.out.println("循环查找" + array[i] + "索引结果>>>" + indexNum);
         }
+        System.out.println("\n查找不存在的...\n");
+        int[] notFoundArray = {0, 19, 26, 29, 33, 82, 85, 107, 303, 302, 399, 408, 409};
+        for (int i : notFoundArray) {
+            int indexNum = search(array, i);
+            System.out.println("循环查找" + i + "索引结果>>>" + indexNum);
+        }
         System.out.println("====end====");
     }
 
@@ -32,10 +38,17 @@ public class BinarySearchFromSortArrayUseMyLoop {
                     // 往右走的距离
                     c = (array.length - cursorIndex) / 2;
                     cursorIndex = cursorIndex + c;
+                    if (c == 0 && dest > array[cursorIndex]) {
+                        return -1;
+                    }
                 } else if (dest < middleValue) {
                     // 往左回修正
+                    int flag = c / 2;
                     c = c / 2 == 0 ? 1 : c / 2;
                     cursorIndex = cursorIndex - c;
+                    if (flag == 0 && dest > array[cursorIndex]) {
+                        return -1;
+                    }
                 }
                 if (dest == array[cursorIndex]) {
                     return cursorIndex;
@@ -51,10 +64,16 @@ public class BinarySearchFromSortArrayUseMyLoop {
                     // 往左走的距离
                     c = cursorIndex / 2;
                     cursorIndex = cursorIndex / 2;
+                    if (c == 0 && dest < array[cursorIndex]) {
+                        return -1;
+                    }
                 } else if (dest > middleValue) {
-                    // 往右走修正
+                    int flag = c / 2;
                     c = c / 2 == 0 ? 1 : c / 2;
                     cursorIndex = cursorIndex + c;
+                    if (flag == 0 && dest < array[cursorIndex]) {
+                        return -1;
+                    }
                 }
                 if (dest == array[cursorIndex]) {
                     return cursorIndex;
