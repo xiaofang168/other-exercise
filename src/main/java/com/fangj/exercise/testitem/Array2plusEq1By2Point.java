@@ -19,17 +19,20 @@ public class Array2plusEq1By2Point {
         for (int i = 0; i < nums.length; i++) {
             int head = i + 1;
             int tail = nums.length - 1;
+            // 第二层循环
             for (int m = head; m < nums.length; m++) {
                 if (head == tail) {
                     break;
                 }
+                // 绝对值解法
                 if (nums[head] + nums[tail] == -nums[i]) {
                     result.add(new Integer[]{nums[i], nums[head], nums[tail]});
                     break;
                 } else if (nums[head] + nums[tail] < (-nums[i])) {
+                    // 移动头指针变大
                     head++;
                 } else {
-                    // 移动尾指针
+                    // 移动尾指针变小
                     tail--;
                 }
             }
