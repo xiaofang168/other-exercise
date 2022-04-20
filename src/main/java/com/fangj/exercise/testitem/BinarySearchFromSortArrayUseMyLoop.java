@@ -61,7 +61,7 @@ public class BinarySearchFromSortArrayUseMyLoop {
                 middleValue = array[cursorIndex];
                 // 左区间指针
                 if (dest < middleValue) {
-                    // 往左走的距离
+                    // 往右走的距离
                     c = cursorIndex / 2;
                     cursorIndex = cursorIndex / 2;
                     if (c == 0 && dest < array[cursorIndex]) {
@@ -69,6 +69,7 @@ public class BinarySearchFromSortArrayUseMyLoop {
                     }
                 } else if (dest > middleValue) {
                     int flag = c / 2;
+                    // 少加一点
                     c = c / 2 == 0 ? 1 : c / 2;
                     cursorIndex = cursorIndex + c;
                     if (flag == 0 && dest < array[cursorIndex]) {
