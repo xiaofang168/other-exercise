@@ -72,4 +72,4 @@ print ${\(scalar(@a))};
 print "\n";
 my $t = \@a;
 
-print(@{$t});
+print @{$t} . "\n";
