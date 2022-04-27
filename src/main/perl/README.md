@@ -57,4 +57,10 @@ for index in range(len(arg_list)):
     arg_list[index]=arg_list[index].encode(sys.getfilesystemencoding()) 
 
 
+## 语法
+在文件头部加上如下代码print自动换行
 
+```
+#!/usr/bin/perl -l
+
+```
