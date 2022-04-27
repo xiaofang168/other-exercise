@@ -10,6 +10,7 @@
 - 方法二：perldoc module_name 例：perldoc IO::ALL,perldoc -f open
 
 ## 在线安装模块
+- 模块搜索 https://metacpan.org/
 - cpan module_name 例：cpan IO::ALL
 - 自动安装依赖的命令: cpanm module_name 例：sudo cpanm module_name
 - 强制安装,解决安装失败问题: sudo cpanm --force install BSON::Raw
