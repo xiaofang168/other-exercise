@@ -13,5 +13,8 @@
 * 运行命令
 > 避免框架 info debug 日志输出，使用scrapy runspider OSChinaCollSpider.py **-L WARNING**
 
+# 在线安装package
+- https://pypi.org/
+
 
 
