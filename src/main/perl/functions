@@ -17,3 +17,4 @@
 17、方法调用及参数传递譬如#my $m = shift @_;#my $n = shift @_;||my ($m,$n) = @_; array_test.pl
 18、正则表达式提取匹配的文本、去掉换行 #print $&."\n"; parsefile_copy_file.pl
 19、读取excel-xlsx数据read_excel_xlsx.pl
+20、调用shell获取返回值call_sh.pl
