@@ -7,6 +7,7 @@ use lib ".";
 use Person;
 my $object = new Person();
 
+# 数组里面也可以有=>
 $object->foo(POST => ':8083/data/commit', 'Content-Type' => 'application/json','dddd');
 print "\n\n";
 
