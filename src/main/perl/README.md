@@ -53,22 +53,22 @@ C:\Users\用户名\AppData\Roaming\Sublime Text 2\Packages\User\您的编译配�
 修改 proc_env[k] = os.path.expandvars(v).encode(sys.getfilesystemencoding())为  proc_env[k] = os.path.expandvars(v.decode(sys.getfilesystemencoding())).encode(sys.getfilesystemencoding()) 
 
 2. 在 self.proc = subprocess.Popen(arg_list, stdout=subprocess.PIPE, 
-前增加 
-for index in range(len(arg_list)):  
+   前增加 
+   for index in range(len(arg_list)):  
     arg_list[index]=arg_list[index].encode(sys.getfilesystemencoding()) 
 
 
 ## 语法
 - 在文件头部加上如下代码print自动换行
 
-```
+```perl
 #!/usr/bin/perl -l
 
 ```
 ### 符号解释
 - =~  读作does match，表示正则表达式匹配
 - $_ 表示Perl中的“老地方”，即在没有特殊指定变量的情况下，编译器会默认使用$_变量的内容参与程序运算。
-```
+```perl
 $_ = "aaa4zzz7bbb";
 $_ =~ /(\d)z{3}(\d)/;
 print "$1\t$2\n";
