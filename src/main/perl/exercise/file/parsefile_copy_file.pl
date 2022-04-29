@@ -30,7 +30,7 @@ sub open_display_file
 			#$count = $count + 1;
 			#print $1.">>>".$count."\n"
 			# 调用copy 函数
-			copyfile($1,"C:\\Users\\fangjie1.HIK\\Desktop\\spray-extjs\\lib")
+			copyfile($1,"C:\\Users\\fangjie1\\Desktop\\spray-extjs\\lib")
 			#print $1."\n";
 		}
 		
