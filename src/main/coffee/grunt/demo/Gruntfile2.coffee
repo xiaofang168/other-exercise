@@ -4,7 +4,7 @@ module.exports = (grunt) ->
 
 		uglify:
 			options:
-				banner: '/*! <%= pkg.name %> mailto:fangjie1@hikvision.com.cn <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+				banner: '/*! <%= pkg.name %> mailto:fangjie1@fangj.com.cn <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			product: 
 				src: 'product/src/*.js'
 				dest: 'product/dist/'
