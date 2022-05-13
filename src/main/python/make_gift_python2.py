@@ -13,7 +13,9 @@ m = 10
 n = 2
 while n < m:
 	sleep(0.02)
-	local = (r"%s.jpg" % (n))
+	# 字符串格式化 %-formatting(最早 Python 的格式化字串)
+	# %-formatting、str-format（Python 2.6+）、f-string （Python 3.6+）
+	local = r"%s.jpg" % (n)
 	print(local)
 	images.append(Image.open(local))
 	n = n + 1
