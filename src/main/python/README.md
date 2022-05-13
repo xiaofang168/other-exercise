@@ -10,7 +10,7 @@
 
 * 运行命令
 > 避免框架 info debug 日志输出，使用scrapy runspider OSChinaCollSpider.py **-L WARNING**
-> 查看版本python -v 或python3 -v
+> 查看版本python -v 或python3 -v (mac中自带python2和python3)
 
 # 在线安装package
 - https://pypi.org/
