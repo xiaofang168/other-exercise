@@ -21,6 +21,7 @@
 - 搜索Python图像PIL设计和GIF动图 pip3 install imageio，mac中可以删除动态中不需要的图
 - python >= 3.8 验证码识别 pip install ddddocr
 - 生成报表图如echarts
+- 七个实用的Python自动化代码，别再重复造轮子了
 
 # 功能说明
 - 截屏为图片screenshot.py
