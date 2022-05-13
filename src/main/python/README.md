@@ -18,7 +18,7 @@
 
 # 在线功能
 - 搜索python常用函数
-- 搜索Python图像PIL设计和GIF动图 pip3 install imageio
+- 搜索Python图像PIL设计和GIF动图 pip3 install imageio，mac中可以删除动态中不需要的图
 - python >= 3.8 验证码识别 pip install ddddocr
 - 生成报表图如echarts
 
