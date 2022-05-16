@@ -1,3 +1,6 @@
+# 说明
+适用各种智能化处理
+
 # 使用scrapy爬取开源中国个人收藏夹
 
 
@@ -34,4 +37,5 @@
 # 功能说明
 - 截屏为图片screenshot.py
 - 录制屏幕gift图make.gift.py
+- 给图片增加水印 img_add_watermark.py
 
