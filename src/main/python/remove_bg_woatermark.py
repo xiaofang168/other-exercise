@@ -9,6 +9,7 @@ print(dir)
 
 img = cv2.imread("add_mark/WX20220302-202232@2x.jpg")
 
+# alpha(对比度) beta(亮度)
 alpha = 2.0
 beta = -160
 
