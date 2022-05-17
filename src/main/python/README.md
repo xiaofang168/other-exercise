@@ -39,4 +39,5 @@
 - 录制屏幕gift图make.gift.py
 - 给图片增加水印 img_add_watermark.py
 - 去除图片水印OpenCV、cv2、numpy
+- 去除背景水印remove_bg_woatermark.py
 
