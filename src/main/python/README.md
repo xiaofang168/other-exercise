@@ -33,6 +33,14 @@
 - python >= 3.8 验证码识别 pip install ddddocr
 - 生成报表图如echarts
 - 七个实用的Python自动化代码，别再重复造轮子了
+- pip install moviepy 视频转换gif图
+- [Python这些操作，逆天且实用！]([https://developer.51cto.com/article/709153.html?utm_source=tuicool&utm_medium=referral])
+	- 显示WiFi密码
+	- 视频转GIF
+	- 文本转PDF
+	- 生成二维码
+	- 提取音频
+
 
 # 功能说明
 - 截屏为图片screenshot.py
@@ -41,4 +49,7 @@
 - 去除图片水印OpenCV、cv2、numpy
 - 去除背景水印remove_bg_woatermark.py
 - 增加制定位置的透明水印transparence_watermark.py
+- 显示windows wifi密码 show_wifi_password.py
+- 生成二维码gen_qrcode.py
+- 生成外网短链接gen_shorturl.py(tinyurl.com)
 
