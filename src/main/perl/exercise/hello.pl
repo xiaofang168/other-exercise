@@ -57,3 +57,6 @@ my %is_invited = map {$_ => 1} @names;
 
 # Dumper友好的查看数据结构
 print Dumper \%is_invited;
+
+# 字符串相乘
+say "hello " x 3
