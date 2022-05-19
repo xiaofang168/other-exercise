@@ -1,5 +1,6 @@
 # 说明
-适用各种智能化处理
+- 适用各种智能化处理
+- 当作伪代码来读
 
 # 使用scrapy爬取开源中国个人收藏夹
 
@@ -23,6 +24,10 @@
 - 检查兼容性问题 pip check package-name
 - 将库下载到本地 pip download PyYAML  -d "/tmp/"
 
+# python内置命令
+- 替换telnet：python3 -m telnetlib -d www.baidu.com 443
+- 启动web：python3 -m http.server（可以共享当前目录下的资源文件、充当nginx、openresty web服务器）
+
 # 在线安装package
 - https://pypi.org/
 - pip/pip3 install imageio (pip默认为python2)
@@ -40,7 +45,7 @@
 	- 文本转PDF
 	- 生成二维码
 	- 提取音频
-
+- [Python装饰器模式](https://www.jdon.com/60619)
 
 # 功能说明
 - 截屏为图片screenshot.py
