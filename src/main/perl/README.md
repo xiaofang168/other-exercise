@@ -79,3 +79,12 @@ print; #默认读取$_
 ```
 ### 正则表达式
 - r 不替换原字符串，返回替换的新字符串（默认替换原串，返回替换次数） $new = $str =~ s/l/L/r
+
+## Perl6
+- doc：https://docs.raku.org/language.html
+- 资料
+	- https://zh.perl6intro.com/
+	
+- sublime3语法插件：https://github.com/silentTeee/sublimetext3-perl6-syntax
+- modules：https://modules.raku.org/
+- 模块安装：https://github.com/ugexe/zef rakubrew build-zef
