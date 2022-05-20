@@ -99,6 +99,9 @@ class Human {
 my $john = Human.new(name => 'John', age => 23, sex => 'M', nationality => 'American');
 say $john.age;
 
+# 如果存在就返回age属性
+say .age with $john; 
+
 if 'Rakudo is a Perl 6 compiler' ~~ m/:s Perl 6/ {
     say "匹配的内容是：" ~ $/;
     say "匹配之前的字符串：" ~ $/.prematch;
@@ -119,3 +122,4 @@ if $email ~~ / <多个字母> <点> <多个字母> <at> <多个字母与数字> 
 } else {
   say "这不是合法的Email地址";
 }
+
