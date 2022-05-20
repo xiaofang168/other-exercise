@@ -2,6 +2,9 @@
 - 适用各种智能化处理
 - 当作伪代码来读
 
+# 在线教程
+- https://docs.python.org/zh-cn/3/tutorial/index.html
+
 # 使用scrapy爬取开源中国个人收藏夹
 
 
