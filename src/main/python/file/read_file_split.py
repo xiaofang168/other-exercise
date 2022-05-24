@@ -1,7 +1,10 @@
+import re
+
 with open('dk.txt', encoding="utf-8") as f:
 	for line in f:
-		# 空格分隔
-		source = line.split()
+		# 正则表达式空格分隔
+		data = re.split('\\s+', line, 2)
+
 		# f格式化字符串
-		print(f"{source[1]}")
+		print(f"{data[1]}, {data[2]}")
 f.close()
