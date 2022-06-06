@@ -11,7 +11,9 @@ pysqldf = lambda q: sqldf(q, globals())
 df1 = pd.read_excel("test_new.xlsx",sheet_name ="业务和系统指标梳理")
 #print(df1)
 
-query1 = "select * from df1 t where t.参与盯盘负责人='丁忠燊'  limit 2"
+query1 = """
+	select * from df1 t where t.参与盯盘负责人='丁忠燊'
+"""
 
 result = pysqldf(query1)
 
