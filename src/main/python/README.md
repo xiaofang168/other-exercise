@@ -60,5 +60,5 @@
 - 显示windows wifi密码 show_wifi_password.py
 - 生成二维码gen_qrcode.py
 - 生成外网短链接gen_shorturl.py(tinyurl.com)
-- sql查询excle数据sql_excel.py
+- sql查询excle数据sql_excel.py（可以使用pandas、xlwings、openpyxl等包来对Excel进行增删改查、格式调整等操作，甚至可以使用Python函数来对excel数据进行分析）
 
