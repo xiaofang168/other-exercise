@@ -60,4 +60,5 @@
 - 显示windows wifi密码 show_wifi_password.py
 - 生成二维码gen_qrcode.py
 - 生成外网短链接gen_shorturl.py(tinyurl.com)
+- sql查询excle数据sql_excel.py
 
