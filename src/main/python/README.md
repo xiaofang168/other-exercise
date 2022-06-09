@@ -42,6 +42,7 @@
 - 生成报表图如echarts
 - 七个实用的Python自动化代码，别再重复造轮子了
 - pip install moviepy 视频转换gif图
+- pandas matplotlib 画图
 - [Python这些操作，逆天且实用！]([https://developer.51cto.com/article/709153.html?utm_source=tuicool&utm_medium=referral])
 	- 显示WiFi密码
 	- 视频转GIF
@@ -62,4 +63,5 @@
 - 生成外网短链接gen_shorturl.py(tinyurl.com)
 - sql查询excle数据sql_excel.py（可以使用pandas、xlwings、openpyxl等包来对Excel进行增删改查、格式调整等操作，甚至可以使用Python函数来对excel数据进行分析）
 - 页面转图片html_image.py
+- sql统计excel中的数据然后输出报表sql_excel.py
 
