@@ -52,6 +52,7 @@ result2 = pysqldf(query2)
 # grid X轴标签太长被截断的解决方案
 grid = Grid(init_opts=opts.InitOpts(animation_opts=opts.AnimationOpts(animation_delay=1000, animation_easing="elasticOut"),
 	width="1500px",
+	height="1000px",
 	theme=ThemeType.LIGHT,
 	page_title="巡检任务"))
 
@@ -59,7 +60,7 @@ bar = (
     Bar()
     .add_xaxis(result['realname'].tolist())
     .add_yaxis("巡检指标数", result['task_count'].tolist())
-    .set_global_opts(title_opts=opts.TitleOpts(title="巡检指标分布", pos_left='5%'),
+    .set_global_opts(title_opts=opts.TitleOpts(title="巡检指标分布", pos_top='5%'),
     	xaxis_opts=opts.AxisOpts(axislabel_opts={"rotate":45,"interval":"0"},is_show=True),
     	legend_opts=opts.LegendOpts(pos_left="25%"))
     # 或者直接使用字典参数
@@ -70,20 +71,20 @@ bar2 = (
     Bar()
     .add_xaxis(result2['realname'].tolist())
     .add_yaxis("巡检模块数", result2['project_count'].tolist())
-    .set_global_opts(title_opts=opts.TitleOpts(title="巡检模块分布",pos_right='7%'),
+    .set_global_opts(title_opts=opts.TitleOpts(title="巡检模块分布",pos_top='60%'),
     	xaxis_opts=opts.AxisOpts(axislabel_opts={"rotate":45,"interval":"0"},is_show=True),
-    	legend_opts=opts.LegendOpts(pos_right="25%"))
+    	legend_opts=opts.LegendOpts(pos_left="25%",pos_top='60%'))
     # 或者直接使用字典参数
     # .set_global_opts(title_opts={"text": "主标题", "subtext": "副标题"})
 )
 #bar.set_series_opts(itemstyle_opts=opts.ItemStyleOpts(color='#99ccff'),label_opts=opts.LabelOpts(is_show=True))
 
 # 并行排列
-grid.add(bar, grid_opts=opts.GridOpts(pos_right="55%",pos_bottom=120))
-grid.add(bar2, grid_opts=opts.GridOpts(pos_left="55%",pos_bottom=120))
+#grid.add(bar, grid_opts=opts.GridOpts(pos_right="55%",pos_bottom=120))
+#grid.add(bar2, grid_opts=opts.GridOpts(pos_left="55%",pos_bottom=120))
 
 # 垂直排列
-# grid.add(bar, grid_opts=opts.GridOpts(pos_bottom="60%"))
-# grid.add(bar2, grid_opts=opts.GridOpts(pos_top="50%",pos_bottom="120"))
+grid.add(bar, grid_opts=opts.GridOpts(pos_bottom="60%"))
+grid.add(bar2, grid_opts=opts.GridOpts(pos_top="60%",pos_bottom="120"))
 page.add(grid)
 grid.render("test.html")
