@@ -17,7 +17,11 @@ df1 = pd.read_excel("test_new.xlsx",sheet_name ="业务和系统指标梳理")
 #print(df1)
 
 query1 = """
-	select count(*) as task_count, t.参与盯盘负责人 as realname from  df1 t where realname is not null group by t.参与盯盘负责人
+	select count(*) as task_count, t.参与盯盘负责人 as realname 
+	from  df1 t 
+	where realname is not null
+	group by t.参与盯盘负责人
+	order by task_count asc
 """
 
 result = pysqldf(query1)
