@@ -24,11 +24,23 @@ query1 = """
 	order by task_count asc
 """
 
+query2 = """select count(*) as project_count,r.realname from(
+	select t.模块系统 as project, t.参与盯盘负责人 as realname 
+	from  df1 t 
+	where realname is not null
+	group by t.模块系统,t.参与盯盘负责人) 
+	as r 
+	group by r.realname
+	order by project_count
+"""
+
 result = pysqldf(query1)
+
+result2 = pysqldf(query2)
 
 #print(type(result))
 
-print(result)
+#print(result2)
 
 #print(result['task_count'].tolist())
 
@@ -40,22 +52,38 @@ print(result)
 # grid X轴标签太长被截断的解决方案
 grid = Grid(init_opts=opts.InitOpts(animation_opts=opts.AnimationOpts(animation_delay=1000, animation_easing="elasticOut"),
 	width="1500px",
-	height="650px",
 	theme=ThemeType.LIGHT,
 	page_title="巡检任务"))
 
 bar = (
     Bar()
     .add_xaxis(result['realname'].tolist())
-    .add_yaxis("任务分布", result['task_count'].tolist())
-    .set_global_opts(title_opts=opts.TitleOpts(title="执行者任务数"),
+    .add_yaxis("巡检指标数", result['task_count'].tolist())
+    .set_global_opts(title_opts=opts.TitleOpts(title="巡检指标分布", pos_left='5%'),
     	xaxis_opts=opts.AxisOpts(axislabel_opts={"rotate":45,"interval":"0"},is_show=True),
-    	legend_opts=opts.LegendOpts(pos_top=50))
+    	legend_opts=opts.LegendOpts(pos_left="25%"))
+    # 或者直接使用字典参数
+    # .set_global_opts(title_opts={"text": "主标题", "subtext": "副标题"})
+)
+
+bar2 = (
+    Bar()
+    .add_xaxis(result2['realname'].tolist())
+    .add_yaxis("巡检模块数", result2['project_count'].tolist())
+    .set_global_opts(title_opts=opts.TitleOpts(title="巡检模块分布",pos_right='7%'),
+    	xaxis_opts=opts.AxisOpts(axislabel_opts={"rotate":45,"interval":"0"},is_show=True),
+    	legend_opts=opts.LegendOpts(pos_right="25%"))
     # 或者直接使用字典参数
     # .set_global_opts(title_opts={"text": "主标题", "subtext": "副标题"})
 )
 #bar.set_series_opts(itemstyle_opts=opts.ItemStyleOpts(color='#99ccff'),label_opts=opts.LabelOpts(is_show=True))
 
-grid.add(bar, grid_opts=opts.GridOpts(pos_bottom="25%"))
+# 并行排列
+grid.add(bar, grid_opts=opts.GridOpts(pos_right="55%",pos_bottom=120))
+grid.add(bar2, grid_opts=opts.GridOpts(pos_left="55%",pos_bottom=120))
+
+# 垂直排列
+# grid.add(bar, grid_opts=opts.GridOpts(pos_bottom="60%"))
+# grid.add(bar2, grid_opts=opts.GridOpts(pos_top="50%",pos_bottom="120"))
 page.add(grid)
 grid.render("test.html")
