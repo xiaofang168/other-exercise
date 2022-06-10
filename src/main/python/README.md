@@ -64,4 +64,4 @@
 - sql查询excle数据sql_excel.py（可以使用pandas、xlwings、openpyxl等包来对Excel进行增删改查、格式调整等操作，甚至可以使用Python函数来对excel数据进行分析）
 - 页面转图片html_image.py
 - sql统计excel中的数据然后输出报表sql_excel.py
-
+- OCR识别ocr_with_paddle.py
