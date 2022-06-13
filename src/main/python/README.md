@@ -26,6 +26,7 @@
 - 查看需要升级的库 pip list -o
 - 检查兼容性问题 pip check package-name
 - 将库下载到本地 pip download PyYAML  -d "/tmp/"
+- 把python成exe pyinstaller -F -w -p ./lib -i logo.ico main.py
 
 # python内置命令
 - 替换telnet：python3 -m telnetlib -d www.baidu.com 443
