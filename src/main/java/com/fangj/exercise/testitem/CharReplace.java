@@ -31,6 +31,7 @@ public class CharReplace {
         if (s1.contains(c)) {
             return replace(s1, c);
         }
+        // return s1;
         // 去掉空字符
         StringBuilder sb = new StringBuilder();
         for (char c1 : originC) {
