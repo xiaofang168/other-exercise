@@ -20,7 +20,7 @@ public class CharReplace {
             if (m == descC.length) {
                 // 回溯移除
                 for (int j = 0; j < descC.length; j++) {
-                    originC[i--] = 0;
+                    originC[i--] = '0';
                 }
                 // 跳出循环
                 break;
@@ -31,11 +31,18 @@ public class CharReplace {
         if (s1.contains(c)) {
             return replace(s1, c);
         }
-        return s1;
+        // 去掉空字符
+        StringBuilder sb = new StringBuilder();
+        for (char c1 : originC) {
+            if (c1 != '0') {
+                sb.append(c1);
+            }
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        String s = replace("abcdefdf", "ab");
+        String s = replace("abcdefdf", "de");
         System.out.println(s);
     }
 
