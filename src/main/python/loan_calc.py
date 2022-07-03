@@ -16,18 +16,19 @@ mhk = (c*r/12*(1+r/12)**m)/((1+r/12)**m-1)
 
 def p(c,r,m):
 	#表头
-	col = ['本金','每月应还本息','应还本金','应还利息','剩余本金']
-	df = pd.DataFrame([[0 for i in range(5)] for j in range(m+1)],index = list(range(m+1)),columns=col)
-	df.iloc[0,0] = c
-	df.iloc[:,1] = (c*r/12*(1+r/12)**m)/((1+r/12)**m-1)
+	col = ['第几年','本金','每月应还本息','应还本金','应还利息','剩余本金']
+	df = pd.DataFrame([[0 for i in range(6)] for j in range(m+1)],index = list(range(m+1)),columns=col)
+	df.iloc[0,1] = c
+	df.iloc[:,2] = (c*r/12*(1+r/12)**m)/((1+r/12)**m-1)
 	i = 0
 	for i in range(m):
 		j = i +1
-		lixi = df.iloc[i,0]*(r/12)
-		df.iloc[i,3] = lixi
-		df.iloc[i,2] = df.iloc[i,1] - df.iloc[i,3]
-		df.iloc[i,4] = df.iloc[i,0] - df.iloc[i,2]
-		df.iloc[j,0] = df.iloc[i,4]
+		lixi = df.iloc[i,1]*(r/12)
+		df.iloc[i,0] = i+1
+		df.iloc[i,4] = lixi
+		df.iloc[i,3] = df.iloc[i,2] - df.iloc[i,4]
+		df.iloc[i,5] = df.iloc[i,1] - df.iloc[i,3]
+		df.iloc[j,1] = df.iloc[i,5]
 		i += 1
 	df1 = df.iloc[0:m,:].round(2)
 	df1.index = range(1,m+1)
