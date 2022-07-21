@@ -66,3 +66,6 @@
 - 页面转图片html_image.py
 - sql统计excel中的数据然后输出报表sql_excel.py
 - OCR识别ocr_with_paddle.py
+
+# 管理工具
+- Poetry是一个Python中的好用的包管理工具
