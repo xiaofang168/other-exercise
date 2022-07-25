@@ -12,3 +12,8 @@ temp = "I am {first_name} {middle_name}. {last_name}".format(
      last_name='min'
 )
 print(temp)
+
+# 字符串连接f-string
+name = "Django"
+age = 4
+print(f'My name is {name} and I am {age} years old')
