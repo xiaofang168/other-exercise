@@ -29,25 +29,17 @@ class Department {
     private String name;
 
     public Department(int id, int pid, String name) {
-
         this.id = id;
-
         this.pid = pid;
-
         this.name = name;
-
     }
 
     public int getId() {
-
         return id;
-
     }
 
     public void setId(int id) {
-
         this.id = id;
-
     }
 
     public int getPid() {
@@ -55,21 +47,17 @@ class Department {
     }
 
     public String getName() {
-
         return name;
 
     }
 
     public void setName(String name) {
-
         this.name = name;
-
     }
 
     @Override
 
     public String toString() {
-
         return "Department{" +
 
                 "id=" + id +
@@ -79,7 +67,6 @@ class Department {
                 ", name='" + name + '\'' +
 
                 '}';
-
     }
 
 }
@@ -95,29 +82,20 @@ public class DepartmentLevelFind {
         List<Department> allDepartment = new ArrayList<>();
 
         Department dep1 = new Department(1, 0, "北京总部");
-
         Department dep3 = new Department(3, 1, "研发中心");
-
         Department dep4 = new Department(4, 3, "后端研发组");
-
         Department dep6 = new Department(6, 4, "后端实习生组");
-
         Department dep7 = new Department(7, 3, "前端研发组");
-
         Department dep8 = new Department(8, 1, "产品部");
-
+        Department dep9 = new Department(9, 7, "前端研发组-2");
 
         allDepartment.add(dep6);
-
         allDepartment.add(dep7);
-
         allDepartment.add(dep8);
-
         allDepartment.add(dep1);
-
         allDepartment.add(dep3);
-
         allDepartment.add(dep4);
+        allDepartment.add(dep9);
 
         List<Department> subDepartments = DepartmentLevelFind.getSub(1, allDepartment);
 
@@ -138,7 +116,9 @@ public class DepartmentLevelFind {
      */
     public static List<Department> getSub(int id, List<Department> allDepartment) {
         // 查找第一级的所有孩子
-        List<Department> departments = allDepartment.stream().filter(e -> e.getPid() == id).collect(Collectors.toList());
+        List<Department> departments = allDepartment.stream()
+                                                    .filter(e -> e.getPid() == id)
+                                                    .collect(Collectors.toList());
         // 未找到孩子返回
         if (departments.isEmpty()) {
             return departments;
