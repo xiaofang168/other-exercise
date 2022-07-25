@@ -17,3 +17,13 @@ print(temp)
 name = "Django"
 age = 4
 print(f'My name is {name} and I am {age} years old')
+
+fresh_fruit = {
+    'apple': 10,
+    'banana': 8,
+    'lemon': 5,
+}
+
+# :=海象运算符
+if (count := fresh_fruit.get('lemon', 0)) >=5:
+	print(count)
