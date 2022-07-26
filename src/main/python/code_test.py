@@ -27,3 +27,19 @@ fresh_fruit = {
 # :=海象运算符
 if (count := fresh_fruit.get('lemon', 0)) >=5:
 	print(count)
+
+weight = float(input("请输入你的体重（Kg）："))
+height = float(input("请输入你的身高（m）："))
+BMI = weight / height ** 2
+if BMI < 0:
+   print("输入错误")    
+elif BMI < 18.5 :
+   print("偏瘦")
+elif BMI < 25 :
+   print("正常")
+elif BMI < 30 :
+   print("偏胖")
+elif BMI < 35 :
+   print("肥胖")
+else:
+   print("重度肥胖")
