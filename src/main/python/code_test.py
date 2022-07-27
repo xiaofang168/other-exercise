@@ -28,6 +28,7 @@ fresh_fruit = {
 if (count := fresh_fruit.get('lemon', 0)) >=5:
 	print(count)
 
+'''
 weight = float(input("请输入你的体重（Kg）："))
 height = float(input("请输入你的身高（m）："))
 BMI = weight / height ** 2
@@ -43,3 +44,20 @@ elif BMI < 35 :
    print("肥胖")
 else:
    print("重度肥胖")
+
+'''
+
+# 高级解析式
+price_list = [1.34, 19.01, -4.2, 6, 8.78, -1,1]
+normalized_price_list = [price if price > 0 else price*-1 for price in price_list]
+print(normalized_price_list)
+
+# 集合解析式
+string = "Excellent"
+unique_string = {letter for letter in string}
+print(unique_string)
+
+# 字典解析式
+string = "Words are but wind"
+word_order = {el: ind+1 for ind, el in enumerate(string.split())}
+print(word_order)
