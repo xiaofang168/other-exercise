@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 /**
+ * 根据一个随机数构造另外的随机数的解法
  * 给定一个随机数生成器，这个生成器能均匀生成1到3(1,3)的随机数，如何使用这个生成器生成均匀分布的1到5(1,5)的数?
  * n(Rn-1)+Rn，新函数中靠近后面的最小公倍数舍弃
  *
