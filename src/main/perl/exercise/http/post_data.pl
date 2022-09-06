@@ -22,7 +22,7 @@ my $json_text  = to_json \%data;
 
 print $json_text, "\n";
 
-my $res2 = Net::HTTP::Client->request(POST => '10.161.179.23:8083/data/commit', 'Content-Type' => 'application/json', $json_text);
+my $res2 = Net::HTTP::Client->request(POST => 'localhost:8083/data/commit', 'Content-Type' => 'application/json', $json_text);
 
 if ($res2->is_success) {
   print $res2->decoded_content, "\n";
