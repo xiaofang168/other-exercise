@@ -3,7 +3,7 @@ package com.fangj.exercise.testitem;
 /**
  * 判断是否是回文链表
  *
- * @author jefffang
+ * @author fangjie
  * @date Created in 4:11 下午 2022/7/28.
  */
 public class PalindromicLink {

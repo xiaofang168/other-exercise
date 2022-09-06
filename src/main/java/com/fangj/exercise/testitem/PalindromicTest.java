@@ -1,7 +1,7 @@
 package com.fangj.exercise.testitem;
 
 /**
- * @author jefffang
+ * @author fangjie
  * @date Created in 3:56 下午 2022/7/27.
  */
 public class PalindromicTest {

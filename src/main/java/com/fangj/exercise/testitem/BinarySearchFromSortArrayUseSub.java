@@ -6,7 +6,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import java.util.Arrays;
 
 /**
- * @author jefffang
+ * @author fangjie
  * @date Created in 4:45 下午 2022/4/19.
  */
 public class BinarySearchFromSortArrayUseSub {
