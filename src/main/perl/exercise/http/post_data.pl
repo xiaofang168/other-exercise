@@ -15,7 +15,7 @@ my $res = $client->request(GET => '/apis/holiday-in-law.json');
 #  warn $res->status_line, "\n";
 #}
 
-my %data = ('source'=>'pay_center_dk', 'ext'=>'{"count":230}', 'create_time'=>1650888000000,'ip'=>'172.30.176.10');
+my %data = ('source'=>'pay_center_dk', 'ext'=>'{"count":230}', 'create_time'=>1650888000000,'ip'=>'localhost');
 
 # json转换
 my $json_text  = to_json \%data;
