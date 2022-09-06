@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * Timer 、ScheduledThreadPool 和 DelayQueue，总结的说下它们都是通过优先队列来获取最早需要执行的任务，
  * 因此插入和删除任务的时间复杂度都为O(logn)，并且 Timer 、ScheduledThreadPool 的周期性任务是通过重置任务的下一次执行时间来完成的。
  *
- * @author jefffang
+ * @author fangjie
  * @date Created in 11:27 上午 2022/5/31.
  */
 public class DelayTaskExample {

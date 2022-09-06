@@ -1,7 +1,7 @@
 package com.fangj.exercise.performance;
 
 /**
- * @author jefffang
+ * @author fangjie
  * @date Created in 4:32 下午 2021/12/2.
  */
 public enum DirectionEnum {
