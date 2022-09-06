@@ -12,7 +12,7 @@ my @days = ("2022-04-27");
 # 定义小时
 my @times = ("07:30","11:30","15:30","19:30");
 
-# 代扣成功数数组
+# 成功数数组
 my @count_list = qw(100 200 400 500 80 90 300 600 200);
 
 # 构造单条数据
@@ -34,8 +34,8 @@ foreach my $day (@days) {
 		my $start_ext_json  = to_json \%start_ext;
 		my $end_ext_json  = to_json \%end_ext;
 
-		my %start_row = (source=>'pay_center_dk_demo', ext=>$start_ext_json, create_time=>$start_time, ip=>'172.30.176.10');
-		my %end_row = (source=>'pay_center_dk_demo', ext=>$end_ext_json, create_time=>$end_time, ip=>'172.30.176.10');
+		my %start_row = (source=>'', ext=>$start_ext_json, create_time=>$start_time, ip=>'');
+		my %end_row = (source=>'', ext=>$end_ext_json, create_time=>$end_time, ip=>'');
 
 		# post json
 		my $start_row_json  = to_json \%start_row;
@@ -46,7 +46,7 @@ foreach my $day (@days) {
 		# http post
 		foreach (@data) {
 			print $_;
-			my $result = Net::HTTP::Client->request(POST => '10.161.179.23:8083/data/commit', 'Content-Type' => 'application/json', $_);
+			my $result = Net::HTTP::Client->request(POST => 'localhost:8083/data/commit', 'Content-Type' => 'application/json', $_);
 			if ($result->is_success) {
 			  print $result->decoded_content;
 			} else {
