@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 无重复的最长子串
  *
- * @author fangjie
+ * @author jefffang
  * @date Created in 5:11 下午 2022/7/28.
  */
 public class LongestSubStr {

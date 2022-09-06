@@ -10,13 +10,13 @@
 (writeFile "/Users/fangjie/Downloads/aa.txt")
 
 ;; 管道过程中一个函数的话括号可以省略
-(->> "/Users//gc_logs"
+(->> "/Users/didi/gc_logs"
      clojure.java.io/file
      file-seq
      (mapv str))
 
 ;; doseq是副作用函数，总是返回nil
-(doseq [n (->> "/Users//gc_logs"
+(doseq [n (->> "/Users/didi/gc_logs"
                (clojure.java.io/file)
                (file-seq)
                (mapv str))]
@@ -26,7 +26,7 @@
 (let [grammar-matcher (.getPathMatcher
                         (java.nio.file.FileSystems/getDefault)
                         "glob:*.{zip}")]
-     (->> "/Users//dev-tools"
+     (->> "/Users/didi/dev-tools"
           clojure.java.io/file
           file-seq
           (filter #(.isFile %))
