@@ -6,7 +6,7 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * @author fangjie
+ * @author jefffang
  * @date Created in 10:05 上午 2021/11/26.
  */
 public class MappedByteBufferSkipTest {
