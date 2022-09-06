@@ -1,7 +1,7 @@
 package com.fangj.exercise.testitem;
 
 /**
- * @author jefffang
+ * @author fangjie
  * @date Created in 5:34 下午 2022/7/26.
  */
 public class LinkHasCycle {

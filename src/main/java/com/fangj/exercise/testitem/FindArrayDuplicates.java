@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 偏移量映射
  *
- * @author jefffang
+ * @author fangjie
  * @date Created in 5:07 下午 2022/7/26.
  */
 public class FindArrayDuplicates {
