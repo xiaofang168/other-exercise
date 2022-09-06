@@ -46,7 +46,7 @@ foreach my $day (@days) {
 		# http post
 		foreach (@data) {
 			print $_;
-			my $result = Net::HTTP::Client->request(POST => ':8083/data/commit', 'Content-Type' => 'application/json', $_);
+			my $result = Net::HTTP::Client->request(POST => 'localhost:8083/data/commit', 'Content-Type' => 'application/json', $_);
 			if ($result->is_success) {
 			  print $result->decoded_content;
 			} else {
