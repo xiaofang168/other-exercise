@@ -3,7 +3,7 @@ package com.fangj.exercise.testitem;
 /**
  * 最大子列表和
  *
- * @author fangjie
+ * @author jefffang
  * @date Created in 7:26 下午 2022/7/25.
  */
 public class MaxSubArraySum {
