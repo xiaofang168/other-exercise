@@ -19,7 +19,7 @@ public class PalindromicTest {
                 String a = s.substring(i, j);
                 if (isPalindromic(a) && a.length() > max) {
                     ans = a;
-                    max = Math.max(max, ans.length());
+                    max = a.length();
                 }
             }
         }
