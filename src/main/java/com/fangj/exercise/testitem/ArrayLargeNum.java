@@ -25,10 +25,10 @@ public class ArrayLargeNum {
         Arrays.sort(strs, (o1, o2) -> {
             int compareTo = (o2 + o1).compareTo(o1 + o2);
             if (compareTo > 0) {
-                // 降序
+                // 降序，交换位置
                 return 1;
             } else if (compareTo < 0) {
-                // 升序
+                // 升序，不交换位置
                 return -1;
             }
             return 0;
